@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../partials/header"); %>
+  </head>
+  <body>
+    <%- include("sidebar") %>
+    <% if (page) { %>
+      <div id="content">
+        <%- include(page, data) %>
+        <input id="csrfToken" type="hidden" name="_csrf" value="<%- csrfToken %>">
+      </div>
+      <script src="/js/admin/<%- page %>.js"></script>
+    <% } %>
+  </body>
+
+</html>
